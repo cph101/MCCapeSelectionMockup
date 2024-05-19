@@ -43,13 +43,13 @@ const template = `<div class="cell">
 	img = `<div class="position-relative" style="height: 128px; width: 80px;">
 		<img src="$4" alt="Cape image">
 	</div>`,
-	can = '<canvas width="80" height="128" data-image="$5"></canvas>';
+	can = '<canvas width="80" height="128" data-image="$4"></canvas>';
 
 function setImg(c) {
 	const ctx = c.getContext("2d");
 	ctx.imageSmoothingEnabled = false;
 	const capeimg = document.createElement('img');
-	capeimg.src = 'img/' + c.dataset.image + '.png';
+	capeimg.src = c.dataset.image;
 	capeimg.addEventListener('load', function() {
 		ctx.drawImage(capeimg, 1, 1, 10, 16, 0, 0, 80, 128);
 	});
@@ -58,7 +58,7 @@ function setImg(c) {
 window.addEventListener('load', function() {
 	const row = document.getElementById('row');
 	capes.forEach((cape, i) => {
-		row.innerHTML += template.replace('$0', (i==0 ? img : can)).replace('$1', cape).replace('$2', i).replace('$3', i).replace('$4', 'img/' + cape + '.png').replace('$5', cape);
+		row.innerHTML += template.replace('$0', (i==0 ? img : can)).replace('$1', cape).replace('$2', i).replace('$3', i).replace('$4', 'img/' + cape + '.png');
 	});
 	document.getElementById('0').checked = true;
 	var c = document.getElementsByTagName('canvas');
