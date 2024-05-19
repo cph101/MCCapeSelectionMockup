@@ -12,33 +12,33 @@ const template = `<div class="cell">
 	</label>
 </div></div>`,
 	capes = [
-		['No cape', 'No cape'],
-		['15 Year Anniversary'],
-		['cheapsh0t', 'Translator'],
-		['Cherry Blossom'],
-		['Cobalt'],
-		['dannyBstyle'],
-		['JulianClark'],
-		['MapMaker'],
-		['Migrator'],
-		['MillionthSale'],
-		['Minecon2011'],
-		['Minecon2012'],
-		['Minecon2013'],
-		['Minecon2015'],
-		['Minecon2016'],
-		['Moderator'],
-		['Mojang'],
-		['MojangStudios'],
-		['Mojang-old'],
-		['MrMessiah'],
-		['Prismarine'],
-		['ScrollsChamp'],
-		['Translator'],
-		['Translator-Chinese', 'Translator'],
-		['Turtle'],
-		['Valentine'],
-		['Vanilla']
+		'No cape',
+		'15 Year Anniversary',
+		'cheapsh0t',
+		'Cherry Blossom',
+		'Cobalt',
+		'dannyBstyle',
+		'JulianClark',
+		'MapMaker',
+		'Migrator',
+		'MillionthSale',
+		'Minecon2011',
+		'Minecon2012',
+		'Minecon2013',
+		'Minecon2015',
+		'Minecon2016',
+		'Moderator',
+		'Mojang',
+		'MojangStudios',
+		'Mojang-old',
+		'MrMessiah',
+		'Prismarine',
+		'ScrollsChamp',
+		'Translator',
+		'Translator-Chinese',
+		'Turtle',
+		'Valentine',
+		'Vanilla'
 	],
 	img = `<div class="position-relative" style="height: 128px; width: 80px;">
 		<img src="$4" alt="Cape image">
@@ -58,13 +58,11 @@ function setImg(c) {
 window.addEventListener('load', function() {
 	const row = document.getElementById('row');
 	capes.forEach((cape, i) => {
-			name = cape[0],
-			image = cape[1] || name;
-		row.innerHTML += template.replace('$0', (i==0 ? img : can)).replace('$1', name).replace('$2', i).replace('$3', i).replace('$4', 'img/' + image + '.png').replace('$5', image);
+		row.innerHTML += template.replace('$0', (i==0 ? img : can)).replace('$1', cape).replace('$2', i).replace('$3', i).replace('$4', 'img/' + cape + '.png').replace('$5', cape);
 	});
 	document.getElementById('0').checked = true;
 	var c = document.getElementsByTagName('canvas');
-	for (canvas of c) {
+	for (var canvas of c) {
 		setImg(canvas);
 	}
 	this.window.setTimeout(() => {
