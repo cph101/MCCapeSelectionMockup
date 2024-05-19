@@ -46,13 +46,13 @@ const template = `<div class="cell">
 	can = '<canvas width="80" height="128" data-image="$4"></canvas>';
 
 function setImg(c) {
-	const ctx = c.getContext("2d");
+	const ctx = c.getContext('2d');
 	ctx.imageSmoothingEnabled = false;
-	const capeimg = document.createElement('img');
+	const capeimg = new Image(80, 128);
 	capeimg.src = c.dataset.image;
-	capeimg.addEventListener('load', function() {
+	capeimg.onload = () => {
 		ctx.drawImage(capeimg, 1, 1, 10, 16, 0, 0, 80, 128);
-	});
+	};
 }
 
 window.addEventListener('load', function() {
@@ -66,10 +66,10 @@ window.addEventListener('load', function() {
 		setImg(canvas);
 	}
 	this.window.setTimeout(() => {
-		html2canvas(document.getElementById("main")).then((canvas) => {
+		html2canvas(document.getElementById('main')).then((canvas) => {
 			var link = document.createElement('a');
-  			link.download = "MinecraftCapesSelection.png";
-  			link.href = canvas.toDataURL("image/png");
+  			link.download = 'MinecraftCapesSelection.png';
+  			link.href = canvas.toDataURL('image/png');
   			link.click();
 		});
 	}, 5000);
