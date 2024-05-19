@@ -3,13 +3,47 @@
 :before {
 	box-sizing: border-box;
 }
-body {
+
+@font-face {
+	font-family: MinecraftTenV2;
+	src: url('Minecraft-Tenv2.woff');
+}
+
+/* wrapper to prevent strange 
+border when rendering image */
+body, #main {
+	background: rgb(60, 133, 39);
+}
+
+#main {
+	padding: 2rem;
+	max-width: 55.5625rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+section {
 	background: #ede5e2;
-	padding: 1.5rem;
 	font-family: Noto Sans,sans-serif;
 	line-height: 1.5;
 	margin: 0;
-	max-width: 51.5625rem;
+	border-image-outset: 4px;
+}
+
+
+/* Normally box shadow would be used but only
+inset shadows actually render in the final result */
+section::after {
+	content: '';
+	height: 4px;
+	width: 100%;
+	background: rgba(0,0,0,.25);
+	display: block;
+	transform: translateY(4px);
+}
+
+.section-content {
+	padding: 1.5rem;
 }
 
 /* Intro */
@@ -30,6 +64,7 @@ body {
     font-weight: 400;
     font-size: 1.5rem;
     line-height: 1.75rem;
+	margin: 0;
 }
 .change-cape__content-description {
 	font-family: Noto Sans,sans-serif;
@@ -46,8 +81,8 @@ body {
 
 /* Grid */
 #row {
-	display: grid;
-	grid-template-columns: auto auto auto;
+	display: flex;
+	flex-wrap: wrap;
 	margin-right: -15px;
 	margin-left: -15px;
 	text-align: center;
@@ -63,6 +98,8 @@ body {
 	box-sizing: border-box;
 	width: 243px;
 	margin: 15px;
+	flex-basis: 0px;
+	flex-grow: 1;
 }
 
 /* Checkbox + label under image */
@@ -123,6 +160,7 @@ input[type=checkbox], input[type=radio] {
 .d-inline-block {
 	min-height: 8.375rem;
 	display: inline-block!important;
+	image-rendering: pixelated;
 }
 .position-relative {
 	position: relative!important;
