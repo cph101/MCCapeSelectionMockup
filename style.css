@@ -208,3 +208,17 @@ input[type=checkbox], input[type=radio] {
 .radio input[type=radio]:checked+label .radio-icon:after {
 	background-color: #3c8527;
 }
+
+/* Screenshot button */
+#screenshotBtn {
+	display: block;
+	position: absolute;
+	right: 30px;
+	bottom: 30px;
+	height: 50px;
+	width: 50px;
+	font-size: 30px;
+	background: rgb(196, 68, 68);
+	border-radius: 100%;
+	text-align: center;
+}
