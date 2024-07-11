@@ -14,6 +14,7 @@ const template = `<div class="cell">
 	capes = [
 		'No cape',
 		'15th Anniversary',
+		'Birthday',
 		'cheapsh0t',
 		'Cherry Blossom',
 		'Cobalt',
