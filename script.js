@@ -22,6 +22,7 @@ const template = `<div class="cell">
 		'Follower\'s',
 		'JulianClark',
 		'MapMaker',
+		'MCC 15th Year Cape',
 		'Migrator',
 		'MillionthSale',
 		'Minecon2011',
