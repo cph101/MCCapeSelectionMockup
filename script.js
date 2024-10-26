@@ -30,6 +30,7 @@ const template = `<div class="cell">
 		'Minecon2013',
 		'Minecon2015',
 		'Minecon2016',
+		'Minecraft Experience',
 		'Moderator',
 		'Mojang',
 		'Mojang-new',
