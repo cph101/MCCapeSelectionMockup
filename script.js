@@ -35,6 +35,7 @@ const template = `<div class="cell">
 		'Mojang',
 		'Mojang-new',
 		'Mojang-old',
+		'Mojang Office',
 		'MrMessiah',
 		'Prismarine',
 		'Purple Heart',
